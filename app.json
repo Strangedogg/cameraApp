@@ -13,7 +13,11 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "$(PRODUCT_NAME) needs access to your Camera."
+      },
+      "bundleIdentifier": "com.snekoid.camera2"
     },
     "android": {
       "adaptiveIcon": {
@@ -21,10 +25,27 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.CAMERA"
+      ],
+      "package": "com.snekoid.camera2"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "react-native-vision-camera",
+        {
+          "cameraPermissionText": "$(PRODUCT_NAME) needs access to your Camera."
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "369cc0fd-4c7c-46fe-8da0-1cd8b7de45a1"
+      }
     }
   }
 }
