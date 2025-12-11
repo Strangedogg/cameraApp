@@ -2,6 +2,7 @@ import { useEffect, useRef, useState} from 'react'
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity, Modal } from 'react-native';
 import { Camera, useCameraDevice, useCameraPermission} from 'react-native-vision-camera'
+import { Link } from 'expo-router' //no use now, will have after I put the other screens
 
 export default function App() {
   const device = useCameraDevice("back"); //determines which camera will be used
@@ -43,12 +44,14 @@ export default function App() {
         position: 'absolute', 
         bottom: 80,
         alignItems: 'center', 
-        borderRadius: 4,
+        borderRadius: 20,
         paddingHorizontal: 10, 
 
       }}>
         {/*Link href = "/algo" as Child */}
-        <Text>Verificar Manualmente</Text>
+        <Text>
+          Verificar Manualmente
+        </Text>
       </TouchableOpacity>
     </View>
   );
